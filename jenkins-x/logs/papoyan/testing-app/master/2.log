@@ -1,0 +1,119 @@
+
+Showing logs for build [32mpapoyan-testing-app-master-rele-2[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-sv5zq[0m
+{"level":"warn","ts":1570594692.3739655,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1570594692.374424,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mpapoyan-testing-app-master-rele-2[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-dj8nz[0m
+{"level":"warn","ts":1570594693.3950741,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1570594693.3968048,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mpapoyan-testing-app-master-rele-2[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mpapoyan-testing-app-master-rele-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-papoyan-testing-app-master-rele-zsm89[0m
+{"level":"warn","ts":1570594706.426124,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1570594706.5798814,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/*******/testing-app.git @ v0.0.3 in path /workspace/source"}
+
+Showing logs for build [32mpapoyan-testing-app-master-rele-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:760cda69df7c0132d303909dc5f6389ce384256c
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mpapoyan-testing-app-master-rele-2[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mpapoyan-testing-app-master-rele-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+Showing logs for build [32mpapoyan-testing-app-master-rele-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image python:3.6            
+[36mINFO[0m[0000] Error while retrieving image from cache: getting file info: stat /workspace/sha256:3046835b0ec654bc86caf7b4214c3d890bf4e6f636a97036c16ae046ef30bb76: no such file or directory 
+[36mINFO[0m[0000] Downloading base image python:3.6            
+[36mINFO[0m[0000] Using files from context: [/workspace/source] 
+[36mINFO[0m[0000] Checking for cached layer 563229348140.dkr.ecr.us-east-1.amazonaws.com/todo/cache:4537ad6c6e2cc9f53ec8d9829a6d742817964bdd234093c6287f3cf4e42edf2b... 
+[36mINFO[0m[0000] No cached layer found for cmd RUN pip install -r requirements.txt 
+[36mINFO[0m[0000] Unpacking rootfs as cmd RUN pip install -r requirements.txt requires it. 
+[36mINFO[0m[0014] Taking snapshot of full filesystem...        
+[36mINFO[0m[0020] Using files from context: [/workspace/source] 
+[36mINFO[0m[0020] COPY . /app                                  
+[36mINFO[0m[0020] Taking snapshot of files...                  
+[36mINFO[0m[0020] WORKDIR /app                                 
+[36mINFO[0m[0020] cmd: workdir                                 
+[36mINFO[0m[0020] Changed working directory to /app            
+[36mINFO[0m[0020] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0020] RUN pip install -r requirements.txt          
+[36mINFO[0m[0020] cmd: /bin/sh                                 
+[36mINFO[0m[0020] args: [-c pip install -r requirements.txt]   
+Collecting flask (from -r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/9b/93/628509b8d5dc749656a9641f4caf13540e2cdec85276964ff8f43bbb1d3b/Flask-1.1.1-py2.py3-none-any.whl (94kB)
+Collecting click>=5.1 (from flask->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl (81kB)
+Collecting Werkzeug>=0.15 (from flask->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/ce/42/3aeda98f96e85fd26180534d36570e4d18108d62ae36f87694b476b83d6f/Werkzeug-0.16.0-py2.py3-none-any.whl (327kB)
+Collecting Jinja2>=2.10.1 (from flask->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/65/e0/eb35e762802015cab1ccee04e8a277b03f1d8e53da3ec3106882ec42558b/Jinja2-2.10.3-py2.py3-none-any.whl (125kB)
+Collecting itsdangerous>=0.24 (from flask->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+Collecting MarkupSafe>=0.23 (from Jinja2>=2.10.1->flask->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/b2/5f/23e0023be6bb885d00ffbefad2942bc51a620328ee910f64abe5a8d18dd1/MarkupSafe-1.1.1-cp36-cp36m-manylinux1_x86_64.whl
+Installing collected packages: click, Werkzeug, MarkupSafe, Jinja2, itsdangerous, flask
+Successfully installed Jinja2-2.10.3 MarkupSafe-1.1.1 Werkzeug-0.16.0 click-7.0 flask-1.1.1 itsdangerous-1.1.0
+[36mINFO[0m[0022] Taking snapshot of full filesystem...        
+[36mINFO[0m[0025] Pushing layer 563229348140.dkr.ecr.us-east-1.amazonaws.com/todo/cache:4537ad6c6e2cc9f53ec8d9829a6d742817964bdd234093c6287f3cf4e42edf2b to cache now 
+[36mINFO[0m[0025] EXPOSE 8080                                  
+[36mINFO[0m[0025] cmd: EXPOSE                                  
+[36mINFO[0m[0025] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0025] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0025] ENTRYPOINT ["python"]                        
+[36mINFO[0m[0025] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0025] CMD ["app/app.py"]                           
+[36mINFO[0m[0025] No files changed in this command, skipping snapshotting. 
+[33mWARN[0m[0025] error uploading layer to cache: failed to push to destination 563229348140.dkr.ecr.us-east-1.amazonaws.com/todo/cache:4537ad6c6e2cc9f53ec8d9829a6d742817964bdd234093c6287f3cf4e42edf2b: NAME_UNKNOWN: The repository with name 'todo/cache' does not exist in the registry with id '563229348140' 
+2019/10/09 04:18:54 existing blob: sha256:4d134ac3fe4b8dd8136d9e7acbb2708ead2154185b27c09ae62ca099070cfb27
+2019/10/09 04:18:54 existing blob: sha256:1cafc1648588bfdc6289e5007defacc34978f5f3334d97d238bb635d6c30e558
+2019/10/09 04:18:54 existing blob: sha256:4a56a430b2bac33260d6449e162017e2b23076c6411a17b46db67f5b84dde2bd
+2019/10/09 04:18:54 existing blob: sha256:31ae88fffd1dbfc04a139140969811b50465d21da9cfc37b58ba7ca6f213acab
+2019/10/09 04:18:54 existing blob: sha256:4b5cacb629f5c5323a32103e665756e5d50fe133b3db72d444f370566b713a6a
+2019/10/09 04:18:54 existing blob: sha256:ba726ce251d28b466f0f64e487318262c2c0fd4a2d10fcebe70e2b1fb9d9e71b
+2019/10/09 04:18:54 existing blob: sha256:5c7384adc1f772470764dbd05b7488389810c72a997c6ddfe605940187096a24
+2019/10/09 04:18:54 existing blob: sha256:ea67eaa7dd42136287337f879ef20b4ee73baaa108d833d267ef99dd787cdcbf
+2019/10/09 04:18:54 existing blob: sha256:14408c8d4f9a59a5da8f4cc40650be9a8d0991fa1ce1b2fb2767f289a9cc410d
+2019/10/09 04:18:55 pushed blob: sha256:aa3b41ce5d70bb5a0e5019a932508d7045dfd16eeb025d30b9deeed7c6390073
+2019/10/09 04:18:55 pushed blob: sha256:fb2eae8ee19cc709d09d236448268a5b9c8ea149cd4b6f334b26a80764a9e812
+2019/10/09 04:18:56 pushed blob: sha256:b00eb75e6f970b3a4094648959b7720fe1e4da6b70ecf68f6e736f9f12f391e5
+2019/10/09 04:18:56 563229348140.dkr.ecr.us-east-1.amazonaws.com/*******/testing-app:0.0.3: digest: sha256:86b97d6020b4f8b81f52959284e882919487946acf8bb5868d61230b65e5361a size: 2067
+
+Showing logs for build [32mpapoyan-testing-app-master-rele-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mpapoyan-testing-app-master-rele-2[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/testing-app to an unshallow repository
+Generating change log from git ref cd0ebfed4b4ee9d575ddf8a8e56ee5e0eecc1ca0 => c4e2dd04668d4c296ee8e443187f4ba28a800a82
+WARNING: Failed to enrich commit 2f96836c54d652725849030c4c3d0ab718ac3cf4 with issues: selected more than one user from users.jenkins.io: [******* x-0]
+WARNING: Failed to enrich commit 2f96836c54d652725849030c4c3d0ab718ac3cf4 with issues: selected more than one user from users.jenkins.io: [******* x-0]
+Finding issues in commit messages using git format
+WARNING: No release found for *******/testing-app and tag v0.0.3 so creating a new release
+Updated the release information at https://github.com/*******/testing-app/releases/tag/v0.0.3
+generated: /workspace/source/charts/testing-app/templates/release.yaml
+Created Release testing-app-0-0-3 resource in namespace **
+Updating PipelineActivity *******-testing-app-master-2 with version 0.0.3
+Updated PipelineActivities *******-testing-app-master-2 with release notes URL: https://github.com/*******/testing-app/releases/tag/v0.0.3
+
+Showing logs for build [32mpapoyan-testing-app-master-rele-2[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file testing-app-0.0.3.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mpapoyan-testing-app-master-rele-2[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+Promoting app testing-app version 0.0.3 to namespace **-staging
+Created Pull Request: https://github.com/*******/environment-apriori-dev-staging/pull/3
+Pull Request https://github.com/*******/environment-apriori-dev-staging/pull/3 is merged at sha 102c5f1503f713190d42b463b9a340937b09a28f
+Pull Request merged but we are not waiting for the update pipeline to complete!
